@@ -1,8 +1,13 @@
 const http = require("http");
 const express = require("express");
+const usersRouter = require("./routes/users/usersRouter");
+require("./config/database")();
 
 //!Server
 const app = express();
+
+//! Routes
+app.use("/", usersRouter);
 
 const server = http.createServer(app);
 
